@@ -309,9 +309,37 @@
 				<div class="col-md-12 section-heading text-center">
 					<h2 class="single-animate animate-features-1">Data Set</h2>
 					<div class="row">
-						<div class="col-md-8 col-md-offset-2 single-animate animate-features-2">
-							<h3>Our data set contains match results from the past 9 Indian Premier League Seasons. There is an instance for every single over of a given cricket match. Statistics are broken down into
-                            multiple categories</h3>
+						<div class="col-md-8 col-md-offset-2 single-animate animate-features-2" style="text-align: left">
+							<p>Our data set contains match results from the past 9 Indian Premier League Seasons. There is an instance for every single over of a given cricket match. In total, our data set contained 577 matches and 22083 instances. Within each instance, there are 17 attributes with the following possible values:</p>
+                            <table style="width:100%">
+                              <tr>
+                                <th>Attribute</th>
+                                <th>Description</th> 
+                                <th>Possible Input Values</th>
+                              </tr>
+                              <tr>
+                                <td>match_id</td>
+                                <td>unique match identifier</td> 
+                                <td>whole numbers 1-577</td>
+                              </tr>
+                              <tr>
+                                <td>inning</td>
+                                <td>current inning of given match</td> 
+                                <td>1 or 2</td>
+                              </tr>
+                                <tr>
+                                <td>over</td>
+                                <td>current over of given inning</td> 
+                                <td>whole numbers 1-20</td>
+                              </tr>
+                                <tr>
+                                <td>team1</td>
+                                <td>first </td> 
+                                <td>whole numbers 1-20</td>
+                              </tr>
+                            </table>
+	over	team1	team2	batting_team	total_runs	player_dismissed	innings_wickets	innings_score	score_target	remaining_target	run_rate	required_run_rate	runrate_diff	is_batting_team	target	winner
+} and our classification attribute: 'winner'</p>
 						</div>
 					</div>
 				</div>
