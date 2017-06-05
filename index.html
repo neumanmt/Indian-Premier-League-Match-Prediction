@@ -201,7 +201,7 @@
 		        <div class="navbar-header">
 		        	<!-- Mobile Toggle Menu Button -->
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		          	<a class="navbar-brand" href="index.html">Indian Premier League Match Prediction</a> 
+		          	<a class="navbar-brand" href="index.html">IPL Match Prediction</a> 
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav navbar-right">
@@ -226,7 +226,7 @@
 					    <div class="col-md-7 col-sm-7">
 			    			<div class="fh5co-owl-text-wrap">
 						    	<div class="fh5co-owl-text">
-						    		<h1 class="fh5co-lead to-animate">EECS 349 Project: Indian Premier League Match Prediction</h1>
+						    		<h1 class="fh5co-lead to-animate">EECS 349 Project: <br/>Indian Premier League<br/>Match Prediction</h1>
 						    	</div>
 						    </div>
 					    </div>
@@ -240,9 +240,7 @@
                         <div class="col-md-7 col-sm-7">
                             <div class="fh5co-owl-text-wrap">
 						    	<div class="fh5co-owl-text">
-                                    <h1 class="fh5co-lead to-animate">Project Team Members:</h1>
-                                    <h2 class="fh5co-lead to-animate">Aagam Shah</h2>
-                                    <h3 class="fh5co-lead to-animate">Michael Neuman</h3>
+                                    <h1 class="fh5co-lead to-animate">Project Team Members:<br/>Aagam Shah<br/>Michael Neuman</h1>
                                     <h4 class="fh5co-sub-lead to-animate">We would also like to thank all our classmates who peer reviewed our project.</h4>
 						    	</div>
 						    </div>
@@ -341,7 +339,7 @@
                               </tr>
                                 <tr>
                                 <td>over</td>
-                                <td>current over of given inning</td> 
+                                <td>current over of <br/>given inning</td> 
                                 <td>whole numbers 1-20</td>
                               </tr>
                                 <tr style="background-color: #dddddd">
@@ -431,8 +429,7 @@
 					<h2 class="to-animate">Experiment</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 subtext to-animate">
-							<p style="color: white">To build our models, we split up our dataset into 13 separate csv files, one for each team in the Indian Premier League. To train our models,
-                            we used one instance from each match (inning 2, over 14) to train our model. We then used the remaining instances to test the accuracy of our model.</p>
+							<p style="color: white">To build our models, we split up our dataset into 13 separate csv files,<br/> one for each team in the Indian Premier League.</p>
 						</div>
 					</div>
                     <table align="center" style="width:50%; background-color: white; text-align: center; border: 1px solid #dddddd; border-collapse: collapse;">
@@ -502,8 +499,30 @@
 					<h2 class="single-animate animate-pricing-1">Results</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
-							<h3>Here are our results.</h3>
+							<h3 style="text-align:left;">We first trained a Logistic Regression model. We removed instances where it was the 2nd inning and after the 14th over to be used as a testing set. Our accuracy results are displayed in a table below along with the highest positive and negative absolute value coefficients for team2. This translates to the teams that team1 performs best (positive) and worst (negative) against.</h3>
 						</div>
+                    <table align="center" style="width:80%; background-color: white; text-align: center; border: 1px solid #dddddd; border-collapse: collapse;">
+                        <col width="25%">
+                        <col width="15%">
+                        <col width="30%">
+                        <col width="30%">
+                          <tr style="background-color: #dddddd">
+                            <th style="text-align:center;">Team1 Value</th>
+                            <th style="text-align:center;">Accuracy</th>
+                            <th style="text-align:center;">Highest Weighted Positive team2</th>
+                            <th style="text-align:center;">Highest Weighted Negative team2</th> 
+                          </tr>
+                        <tr>
+                            <td>Chennai Super Kings</td>
+                            <td>89.09%</td>
+                            <td>Pune Warriors (0.9591)</td>
+                            <td>Sunrisers Hyderabad (-0.4952)</td>
+                        </tr>
+                        <tr style="background-color: #dddddd">
+                            <td>Deccan Chargers</td>
+                            <td></td>
+                        </tr>
+                </table>
 					</div>
 				</div>
             </div>
