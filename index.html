@@ -27,16 +27,6 @@
 	//////////////////////////////////////////////////////
 	 -->
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
@@ -76,9 +66,6 @@
 
 
 	<style>
-	/* For demo purpose only */
-	
-	/* For Demo Purposes Only ( You can delete this anytime :-) */
 	#colour-variations {
 		padding: 10px;
 		-webkit-transition: 0.5s;
@@ -209,7 +196,6 @@
 		            <li><a href="#" data-nav-section="about"><span>Overview</span></a></li>
 		            <li><a href="#" data-nav-section="services"><span>Motivation</span></a></li>
 		            <li><a href="#" data-nav-section="features"><span>Data Set</span></a></li>
-		            <li><a href="#" data-nav-section="testimonials"><span>Experiment</span></a></li>
 		            <li><a href="#" data-nav-section="pricing"><span>Results</span></a></li>
 		          </ul>
 		        </div>
@@ -251,21 +237,23 @@
 		   </div>
         </div>
 	
-	<div id="fh5co-about-us" data-section="about">
+	<div id="fh5co-about-us" data-section="about"  style="background-color: #6172F4">
 		<div class="container">
 			<div class="row row-bottom-padded-lg" id="about-us">
 				<div class="col-md-12 section-heading text-center">
-					<h2 class="to-animate">Overview</h2>
+					<h2 class="to-animate" style="color:white">Overview</h2>
 					<div class="row">
                         <img src="images/wikipedia_generic_cricket_pic.JPG" style="width: 50%; height: 350px;"><img src="images/mumbai_championship_espn.jpg" style="transform: scaleX(-1); width: 50%; height: 350px;">
                         </div>
                     <div class="row" style="text-align:left">
-						<div class="col-md-8 col-md-offset-2 to-animate">
-                            <p><br/>Cricket is a game played between two teams made up of eleven players each. The game is played with a bat and ball. Players score runs by running between two sets of wooden posts called <a href="https://en.wikipedia.org/wiki/Wicket">wickets</a>. Cricket originated in England in the 16th century. Today it is popular in countries throughout the world including England,
+						<div class="col-md-8 col-md-offset-2 to-animate"  style="color:white">
+                            <p><br/>Cricket is a game played between two teams made up of eleven players each. The game is played with a bat and ball. Players score runs by running between two sets of wooden posts called <a href="https://en.wikipedia.org/wiki/Wicket" style="color:white">wickets</a>. Cricket originated in England in the 16th century. Today it is popular in countries throughout the world including England,
                             Australia, India, South Africa and many others.</p>
                             <p>When batting, a team has two players on the field (called batsmen). The goal of Cricket is to score more runs that the other team. There are three main ways to earn runs: 1) the two batsmen can run between the wickets after a ball has been bowled, 2) hitting the ball past the boundary (4 runs if it passes the boundary on the ground, 6 runs if it passes the boundary in the air) and 3) penalty points from the bowling team bowling an illegal ball.</p>
                             <p>When bowling, the bowler is trying to hit one of the wickets and make the batter miss their swing. The bowling team remains on the field for either 20 overs or until 10 batsmen are out. An over is defined as six balls bowled by the bowler. There are many different ways that a batsman can get out. Some of the most common ones are: 1) The batsman misses the ball and the ball hits the wicket, 2) the ball hits the batman's body when it would have hit the wicket normally (called leg before wicket), 3) a fielder catches the ball after a batsman hits it and before the ball leaves the field and 4) if a batsman is running between wickets and a fielder hits the wicket before the runner reaches the other side.</p>
                             <p>In the Indian Premier League, each team gets an inning to bat and an inning to be in the field. More details and further explanation of the rules can be found on the official <a href="http://www.iplt20.com">Indian Premier League website</a>.</p>
+                            <p><a class="twitter-timeline" data-lang="en" data-width="1000" data-height="500" data-theme="light" href="https://twitter.com/IPL">Tweets by @IPL</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </p>
                             
 						</div>
 					</div>
@@ -310,24 +298,25 @@
 				</div>
 			</div>
 		</div>
-	<div id="fh5co-features" data-section="features">
+
+	<div id="fh5co-features" data-section="features" style="background-color: #6172F4">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 section-heading text-center">
-					<h2 class="single-animate animate-features-1">Data Set</h2>
+					<h2 class="single-animate animate-features-1" style="color:white">Data Set</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 single-animate animate-features-2" style="text-align: left">
-							<p>Our data set contains match results from the past 9 Indian Premier League Seasons. There is an instance for every single over of a given cricket match. In total, our data set contained 577 matches and 22083 instances. Within each instance, there are 17 attributes with the following possible values:</p>
+							<p style="color:white">Our data set contains match results from the past 9 Indian Premier League Seasons. There is an instance for every single over of a given cricket match. After removing certain instances with missing attribute, our data set contained 577 matches and 21554 instances. Within each instance, there are 17 attributes with the following possible values:</p>
                             <table style="width:100%; border: 2px solid #000000; border-collapse: collapse;text-align: center">
                                 <col width="20%">
                                 <col width="20%">
                                 <col width="60%">
-                              <tr>
+                              <tr style="background-color: #dddddd">
                                 <th style="text-align: center">Attribute</th>
                                 <th style="text-align: center">Description</th> 
                                 <th style="text-align: center">Possible Input Values</th>
                               </tr>
-                              <tr>
+                              <tr style="background-color: white">
                                 <td>match_id</td>
                                 <td>unique match identifier</td> 
                                 <td>whole numbers (1-577)</td>
@@ -337,7 +326,7 @@
                                 <td>current inning of given match</td> 
                                 <td>1 or 2</td>
                               </tr>
-                                <tr>
+                                <tr style="background-color: white">
                                 <td>over</td>
                                 <td>current over of <br/>given inning</td> 
                                 <td>whole numbers (1-20)</td>
@@ -347,7 +336,7 @@
                                 <td>team variables of a given match</td> 
                                 <td>Chennai Super kings, Deccan Chargers, Delhi Daredevils, Gujarat Lions, Kings Xi Punjab, Kochi Tuskers Kerala, Kolkata Knight Riders, Mumbai Indains, Pune Warriors, Rajasthan Royals, Rising Pune Supergiants, Royal Challengers Bangalore, Sunrisers Hyderabad<br/>(13 teams, 8 currently active)</td>
                               </tr>
-                                <tr>
+                                <tr style="background-color: white">
                                 <td>total_runs</td>
                                 <td>number of runs scored in given over</td> 
                                 <td>whole numbers</td>
@@ -357,7 +346,7 @@
                                 <td>number of wickets in a given over</td> 
                                 <td>whole numbers (maximum of 10)</td>
                             </tr>
-                                <tr>
+                                <tr style="background-color: white">
                                 <td>innings_wickets</td>
                                 <td>total number of wickets in a<br/>given inning</td> 
                                 <td>whole numbers (maximum of 10)</td>
@@ -367,7 +356,7 @@
                                 <td>total number of<br/> runs scored in a<br/> given inning</td> 
                                 <td>whole numbers</td>
                               </tr>
-                                <tr>
+                                <tr style="background-color: white">
                                 <td>score_target</td>
                                 <td>how many total runs team2 needs to score to tie team1</td> 
                                 <td>whole numbers and -1 for all overs in which team1 is batting</td>
@@ -377,7 +366,7 @@
                                 <td>remaining number of runs team2 needs to score at a given over</td> 
                                 <td>whole numbers (maximum of value equal to score_target) and<br/> -1 for all overs in which team1 is batting</td>
                               </tr>
-                                <tr>
+                                <tr style="background-color: white">
                                 <td>run_rate</td>
                                 <td>number of runs per over batting_team is averaging</td> 
                                 <td>positive numbers</td>
@@ -387,7 +376,7 @@
                                 <td>how many runs per over team2 needs to average for remainder of match to tie team1</td> 
                                 <td>positive numbers and<br/> -1 for all overs in which team1 is batting</td>
                               </tr>
-                                <tr>
+                                <tr style="background-color: white">
                                 <td>runrate_diff</td>
                                 <td>difference between run_rate and required_run_rate</td> 
                                 <td>real numbers (maximum of value equal to -required_run_rate)</td>
@@ -397,7 +386,7 @@
                                 <td>whether team1 is currently batting or not</td> 
                                 <td>1 if team1 is batting, 0 if team2 is batting</td>
                               </tr>
-                                <tr>
+                                <tr style="background-color: white">
                                 <td>target</td>
                                 <td>whether eventual winner is currently winning</td> 
                                 <td>1 if winner is winning during given over, 0 otherwise</td>
@@ -416,19 +405,19 @@
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4 single-animate animate-features-3">
-					<a href="https://www.kaggle.com/manasgarg/ipl/downloads/matches.csv" class="btn btn-primary btn-block">Link to data set</a>
+					<a href="https://www.kaggle.com/manasgarg/ipl/downloads/matches.csv" class="btn btn-primary btn-block" style="background-color:white; border: 1px solid black; color: #6172F4">Link to data set</a>
 				</div>
 			</div>
 		</div>
 
-	<div id="fh5co-testimonials" data-section="testimonials">		
+	<div id="fh5co-pricing" data-section="pricing">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 section-heading text-center">
-					<h2 class="to-animate">Experiment</h2>
-					<div class="row">
+					<h2 class="single-animate animate-pricing-1">Results</h2>
+                    <div class="row">
 						<div class="col-md-8 col-md-offset-2 subtext to-animate">
-							<p style="color: white">To build our models, we split up our dataset into 13 separate csv files,<br/> one for each team in the Indian Premier League.</p>
+							<p style="text-align: left">To build our models, we split up our dataset into 13 separate csv files, one for each team in the Indian Premier League. Note the discrepencies in number of instances is due to certain teams playing different number of matches each season. The Kochi Tuskers Kerla, Deccan Chargers and Pune Warriors all left the league in 2011, 2012 and 2013 respectively. We decided to keep them within our data set as the teams have the possibility of returning to the league. The Chennai Super Kings and Rajasthan Royals were banned for the 2016 and 2017 seasons but will return in 2018.</p>
 						</div>
 					</div>
                     <table align="center" style="width:50%; background-color: white; text-align: center; border: 2px solid #000000; border-collapse: collapse;">
@@ -436,7 +425,7 @@
                         <col width="50%">
                           <tr style="background-color: #dddddd">
                             <th style="text-align:center;">Team1 Value</th>
-                            <th style="text-align:center;">Number of Instances</th> 
+                            <th style="text-align:center;">Number of Instances (split on 'over')</th> 
                           </tr>
                         <tr>
                             <td>Chennai Super Kings</td>
@@ -482,20 +471,9 @@
                             <td>Sunrisers Hyderabad</td>
                             <td>1416</td>
                         </tr>
+                        <caption style="font-style: italic">Number of instances for each individual team dataset (there were 21554 total instances)</caption>
                 </table>
-				</div>
 			</div>
-			<div class="row">
-                
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-pricing" data-section="pricing">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 section-heading text-center">
-					<h2 class="single-animate animate-pricing-1">Results</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
 							<p style="text-align:left;">We first trained a Logistic Regression model. We removed instances where it was the 2nd inning and after the 14th over to be used as a testing set. Thus our model offers a prediction of a match based on information obtained from the first inning and the first 14 overs of the second, meaning our accuracy results will be higher than a random match prediction made based only on a given pair of teams. Our accuracy results are displayed in a table below along with the highest positive and negative absolute value coefficients for team2. This translates to the teams that team1 performs best (positive) and worst (negative) against.<br/></p>
