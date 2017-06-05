@@ -236,10 +236,10 @@
 		    	</div>
 		   </div>
         </div>
-	
+        
 	<div id="fh5co-about-us" data-section="about"  style="background-color: #6172F4">
 		<div class="container">
-			<div class="row row-bottom-padded-lg" id="about-us">
+			<div class="row" id="about-us">
 				<div class="col-md-12 section-heading text-center">
 					<h2 class="to-animate" style="color:white">Overview</h2>
 					<div class="row">
@@ -253,20 +253,19 @@
                             <p>When bowling, the bowler is trying to hit one of the wickets and make the batter miss their swing. The bowling team remains on the field for either 20 overs or until 10 batsmen are out. An over is defined as six balls bowled by the bowler. There are many different ways that a batsman can get out. Some of the most common ones are: 1) The batsman misses the ball and the ball hits the wicket, 2) the ball hits the batman's body when it would have hit the wicket normally (called leg before wicket), 3) a fielder catches the ball after a batsman hits it and before the ball leaves the field and 4) if a batsman is running between wickets and a fielder hits the wicket before the runner reaches the other side.</p>
                             <p>In the Indian Premier League, each team gets an inning to bat and an inning to be in the field. More details and further explanation of the rules can be found on the official <a href="http://www.iplt20.com">Indian Premier League website</a>.</p>
                             <p><a class="twitter-timeline" data-lang="en" data-width="1000" data-height="500" data-theme="light" href="https://twitter.com/IPL">Tweets by @IPL</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                            </p>
-                            
+                            </p>    
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="fh5co-our-services" data-section="services">
+	<div id="fh5co-our-services" data-section="services" style="background-color: white">
 		<div class="container">
 			<div class="row row-bottom-padded-sm">
 				<div class="col-md-12 section-heading text-center">
 					<h2 class="to-animate">Motivation</h2>
-					<div class="row">
+					<div class="row to-animate">
 						<div class="col-md-8 col-md-offset-2 to-animate">
 							<h3>Why did we decide to build our match predicting model?</h3>
 						</div>
@@ -275,21 +274,21 @@
 			</div>
 			<div class="row">
 				<div class="col-md-4">
-					<div class="box to-animate">
+					<div class="box to-animate" style="background-color: #fafafa; border: 2px solid #6172F4">
 						<div class="icon colored-2"><span><i class="icon-user"></i></span></div>
 						<h3>USEFUL FOR ALL FANS</h3>
 						<p>Whether you are a super passionate fan who likes to crunch all the numbers or just someone who enjoys watching the sport of Cricket, match prediction results can provide many helpful insights into a team's strengths and weaknesses.</p>
 					</div>
                 </div>
                 <div class="col-md-4">	
-                    <div class="box to-animate">
+                    <div class="box to-animate" style="background-color: #fafafa; border: 2px solid #6172F4">
 						<div class="icon colored-4"><span><i class="icon-screen-desktop"></i></span></div>
 						<h3>POPULARITY</h3>
 						<p>Despite only being around since 2008, the Indian Premier League is one of India's most watched spectacles of entertainment. Broadcasts of the first three matches of the 2017 Indian Premier League season reached over 185 million viewers.</p>
 					</div>
                 </div>
                 <div class="col-md-4">	
-					<div class="box to-animate">
+					<div class="box to-animate" style="background-color: #fafafa; border: 2px solid #6172F4">
 						<div class="icon colored-1"><span><i class="icon-money"></i></span></div>
 						<h3>MONETARY</h3>
 						<p>The Indian Premier League contributed over $180 million of India's Gross Domestic Product in 2015 and the Cricket betting markets have continued to grow. Match prediction results are of highest importance in this market.</p>
@@ -304,7 +303,7 @@
 			<div class="row">
 				<div class="col-md-12 section-heading text-center">
 					<h2 class="single-animate animate-features-1" style="color:white">Data Set</h2>
-					<div class="row">
+					<div class="row to-animate">
 						<div class="col-md-8 col-md-offset-2 single-animate animate-features-2" style="text-align: left">
 							<p style="color:white">Our data set contains match results from the past 9 Indian Premier League Seasons. There is an instance for every single over of a given cricket match. After removing certain instances with missing attribute, our data set contained 577 matches and 21554 instances. Within each instance, there are 17 attributes with the following possible values:</p>
                             <table style="width:100%; border: 2px solid #000000; border-collapse: collapse;text-align: center">
@@ -415,11 +414,10 @@
 			<div class="row">
 				<div class="col-md-12 section-heading text-center">
 					<h2 class="single-animate animate-pricing-1">Results</h2>
-                    <div class="row">
+                    <div class="row to-animate">
 						<div class="col-md-8 col-md-offset-2 subtext to-animate">
 							<p style="text-align: left">To build our models, we split up our dataset into 13 separate csv files, one for each team in the Indian Premier League. Note the discrepencies in number of instances is due to certain teams playing different number of matches each season. The Kochi Tuskers Kerla, Deccan Chargers and Pune Warriors all left the league in 2011, 2012 and 2013 respectively. We decided to keep them within our data set as the teams have the possibility of returning to the league. The Chennai Super Kings and Rajasthan Royals were banned for the 2016 and 2017 seasons but will return in 2018.</p>
 						</div>
-					</div>
                     <table align="center" style="width:50%; background-color: white; text-align: center; border: 2px solid #000000; border-collapse: collapse;">
                         <col width="50%">
                         <col width="50%">
@@ -474,7 +472,8 @@
                         <caption style="font-style: italic">Number of instances for each individual team dataset (there were 21554 total instances)</caption>
                 </table>
 			</div>
-					<div class="row">
+                </div>
+					<div class="row to-animate">
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
 							<p style="text-align:left;">We first trained a Logistic Regression model. We removed instances where it was the 2nd inning and after the 14th over to be used as a testing set. Thus our model offers a prediction of a match based on information obtained from the first inning and the first 14 overs of the second, meaning our accuracy results will be higher than a random match prediction made based only on a given pair of teams. Our accuracy results are displayed in a table below along with the highest positive and negative absolute value coefficients for team2. This translates to the teams that team1 performs best (positive) and worst (negative) against.<br/></p>
 						</div>
@@ -559,7 +558,7 @@
                 </table>
                     <div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2" style="text-align:left"><br/>Some interesting results: The Chennai Super Kings did not have a strong advantage against a single given team (all team weights were between -1 and 1) while the Kolkata Knight Riders had a strong disadvantage against the Rajasthan Royals (coefficent of -375.5865). We attribute the large variance in data due to the small number of unique matches. For example, the Gurajart Lions and Delhi Daredevils have only played in two matches. Because the Delhi Daredevils won both matches, there was a larger negative coefficient assigned to the team2 variable. As the dataset grows with more Indian Premier League seasons happening, we would expect the coefficients to become closer to 0, with variations depending on records between a given pair of teams. Overall, we can see that the logistic model will perform with an accuracy >83% for any given team, meaning we can confidently predict the winner of a match if we have information from the early overs. </div>
                     </div>
-					<div class="row">
+					<div class="row to-animate">
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
 							<p style="text-align:left;"><br/>Next we trained each dataset on Weka's NaiveBayes model. We noticed a higher variance in results.</p>
 						</div>
@@ -618,7 +617,7 @@
                 </table>
                         <div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2" style="text-align:left"><br/>The 100% accuracy associated with Gujarat Lions can be attributed to the small size of the match dataset. We noticed that most of the accuracies obtained using NaiveBayes were lower than our other models. Overall, we can see that the Naive Bayes model will perform with an accuracy >61% for any given team, not a very confident finding.</div>
 					</div>
-                    <div class="row">
+                    <div class="row to-animate">
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
 							<p style="text-align:left;"><br/>We then tried k-nearest neighbor, running cross-validation to find the optimal k value to achieve highest accuracy.</p>
 						</div>
