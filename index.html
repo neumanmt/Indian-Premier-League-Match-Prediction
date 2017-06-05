@@ -345,8 +345,7 @@
                                 <tr style="background-color: #dddddd">
                                 <td>team1, team2, batting_team</td>
                                 <td>team variables of a given match</td> 
-                                <td>Chennai Super kings, Deccan Chargers, Delhi Daredevils, Gujarat Lions, Kings Xi Punjab, Kochi Tuskers Kerala, Kolkata Knight Riders, Mumbai Indains, Pune Warriors,
-                                    Rajasthan Royals, Rising Pune Supergiants, Royal Challengers Bangalore, Sunrisers Hyderabad<br/>(13 teams, 8 currently active)</td>
+                                <td>Chennai Super kings, Deccan Chargers, Delhi Daredevils, Gujarat Lions, Kings Xi Punjab, Kochi Tuskers Kerala, Kolkata Knight Riders, Mumbai Indains, Pune Warriors, Rajasthan Royals, Rising Pune Supergiants, Royal Challengers Bangalore, Sunrisers Hyderabad<br/>(13 teams, 8 currently active)</td>
                               </tr>
                                 <tr>
                                 <td>total_runs</td>
@@ -499,37 +498,86 @@
 					<h2 class="single-animate animate-pricing-1">Results</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
-							<h3 style="text-align:left;">We first trained a Logistic Regression model. We removed instances where it was the 2nd inning and after the 14th over to be used as a testing set. Our accuracy results are displayed in a table below along with the highest positive and negative absolute value coefficients for team2. This translates to the teams that team1 performs best (positive) and worst (negative) against.</h3>
+							<h3 style="text-align:left;">We first trained a Logistic Regression model. We removed instances where it was the 2nd inning and after the 14th over to be used as a testing set. Our accuracy results are displayed in a table below along with the highest positive and negative absolute value coefficients for team2. This translates to the teams that team1 performs best (positive) and worst (negative) against.<br/></h3>
 						</div>
-                    <table align="center" style="width:80%; background-color: white; text-align: center; border: 1px solid #dddddd; border-collapse: collapse;">
+                    <table align="center" style="width:80%; background-color: white; text-align: center; border: 2px outset #6172F4;">
                         <col width="25%">
                         <col width="15%">
                         <col width="30%">
                         <col width="30%">
-                          <tr style="background-color: #dddddd">
+                          <tr>
                             <th style="text-align:center;">Team1 Value</th>
                             <th style="text-align:center;">Accuracy</th>
                             <th style="text-align:center;">Highest Weighted Positive team2</th>
                             <th style="text-align:center;">Highest Weighted Negative team2</th> 
                           </tr>
-                        <tr>
+                        <tr style="background-color: #6172F4; color: white;">
                             <td>Chennai Super Kings</td>
                             <td>89.09%</td>
                             <td>Pune Warriors (0.9591)</td>
                             <td>Sunrisers Hyderabad (-0.4952)</td>
                         </tr>
-                        <tr style="background-color: #dddddd">
+                        <tr>
                             <td>Deccan Chargers</td>
                             <td>87.27%</td>
                             <td>Kolkata Knight Riders (16.4045)</td>
                             <td>Kochi Tuskers Kerala (-22.958)</td>
                         </tr>
-                        <tr>
+                        <tr style="background-color: #6172F4; color: white;">
                             <td>Delhi Daredevils</td>
                             <td>86.96%</td>
                             <td>Rising Pune Supergiants (21.148)</td>
                             <td>Pune Warriors (-22.4644)</td>
                         </tr>
+                        <tr>
+                            <td>Gujarat Lions</td>
+                            <td>88.89%</td>
+                            <td>Sunrisers Hyderabad (27.9906)</td>
+                            <td>Delhi Daredevils (-34.061)</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Kolkata Knight Riders</td>
+                            <td>87.85%</td>
+                            <td>Pune Warriors (26.0993)</td>
+                            <td>Rajasthan Royals (-375.5865)</td>
+                        </tr>
+                        <tr>
+                            <td>Kings Xi Punjab</td>
+                            <td>83.38%</td>
+                            <td>Rising Pune Supergiants (56.6141)</td>
+                            <td>Deccan Chargers (-2.8154)</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Mumbai Indians</td>
+                            <td>93.77%</td>
+                            <td>Kochi Tuskers Kerala (22.0244)</td>
+                            <td>Pune Warriors (-39.4622)</td>
+                        </tr>
+                        <tr>
+                            <td>Pune Warriors</td>
+                            <td>86.14%</td>
+                            <td>Royal Challengers Bangalore (65.331)</td>
+                            <td>Mumbai Indians (-9.166)</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Royal Challengers Bangalore</td>
+                            <td>83.55%</td>
+                            <td>Kolkata Knight Riders (19.7319)</td>
+                            <td>Rising Pune Supergiants(-41.0558)</td>
+                        </tr>
+                        <tr>
+                            <td>Rajasthan Royals</td>
+                            <td>87.55%</td>
+                            <td>Kochi Tuskers Kerala (18.8983)</td>
+                            <td>Deccan Chargers (-1.5471)</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Sunrisers Hyderabad</td>
+                            <td>87.22%</td>
+                            <td>Pune Warriors (15.6221)</td>
+                            <td>Royal Challengers Bangalore (-1.9229)</td>
+                        </tr>
+                        <caption>Results of running Weka's Logistic Regression Model on each individual team's dataset</caption>
                 </table>
 					</div>
 				</div>
