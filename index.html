@@ -179,6 +179,8 @@
 		text-decoration: none;
 		outline: none;
 	}
+
+
 	</style>
 	<!-- End demo purposes only -->
 
@@ -209,7 +211,6 @@
 		            <li><a href="#" data-nav-section="features"><span>Data Set</span></a></li>
 		            <li><a href="#" data-nav-section="testimonials"><span>Experiment</span></a></li>
 		            <li><a href="#" data-nav-section="pricing"><span>Results</span></a></li>
-		            <li><a href="#" data-nav-section="press"><span>References</span></a></li>
 		          </ul>
 		        </div>
 			    </nav>
@@ -311,8 +312,11 @@
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 single-animate animate-features-2" style="text-align: left">
 							<p>Our data set contains match results from the past 9 Indian Premier League Seasons. There is an instance for every single over of a given cricket match. In total, our data set contained 577 matches and 22083 instances. Within each instance, there are 17 attributes with the following possible values:</p>
-                            <table style="width:100%">
-                              <tr>
+                            <table style="width:100%; border: 1px solid #dddddd; border-collapse: collapse;">
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="60%">
+                              <tr >
                                 <th>Attribute</th>
                                 <th>Description</th> 
                                 <th>Possible Input Values</th>
@@ -322,7 +326,7 @@
                                 <td>unique match identifier</td> 
                                 <td>whole numbers 1-577</td>
                               </tr>
-                              <tr>
+                              <tr style="background-color: #dddddd">
                                 <td>inning</td>
                                 <td>current inning of given match</td> 
                                 <td>1 or 2</td>
@@ -332,14 +336,73 @@
                                 <td>current over of given inning</td> 
                                 <td>whole numbers 1-20</td>
                               </tr>
+                                <tr style="background-color: #dddddd">
+                                <td>team1, team2, batting_team</td>
+                                <td>team variables of a given match</td> 
+                                <td>Chennai Super kings, Deccan Chargers, Delhi Daredevils, Gujarat Lions, Kings Xi Punjab, Kochi Tuskers Kerala, Kolkata Knight Riders, Mumbai Indains, Pune Warriors,
+                                    Rajasthan Royals, Rising Pune Supergiants, Royal Challengers Bangalore, Sunrisers Hyderabad<br/>(13 teams, 8 currently active)</td>
+                              </tr>
                                 <tr>
-                                <td>team1</td>
-                                <td>first </td> 
-                                <td>whole numbers 1-20</td>
+                                <td>total_runs</td>
+                                <td>number of runs scored in given over</td> 
+                                <td>whole numbers</td>
+                              </tr>
+                                <tr style="background-color: #dddddd">
+                                <td>player_dismissed</td>
+                                <td>number of wickets in a given over</td> 
+                                <td>whole numbers (maximum of 10)</td>
+                            </tr>
+                                <tr>
+                                <td>innings_wickets</td>
+                                <td>total number of wickets in a<br/>given inning</td> 
+                                <td>whole numbers (maximum of 10)</td>
+                              </tr>
+                                <tr style="background-color: #dddddd">
+                                <td>innings_score</td>
+                                <td>total number of<br/> runs scored in a<br/> given inning</td> 
+                                <td>whole numbers</td>
+                              </tr>
+                                <tr>
+                                <td>score_target</td>
+                                <td>how many total runs team2 needs to score to tie team1</td> 
+                                <td>whole numbers and -1 for all overs in which team1 is batting</td>
+                              </tr>
+                                <tr style="background-color: #dddddd">
+                                <td>remaining_target</td>
+                                <td>remaining number of runs team2 needs to score at a given over</td> 
+                                <td>whole numbers (maximum of value equal to score_target) and<br/> -1 for all overs in which team1 is batting</td>
+                              </tr>
+                                <tr>
+                                <td>run_rate</td>
+                                <td>number of runs per over batting_team is averaging</td> 
+                                <td>positive numbers</td>
+                              </tr>
+                                <tr style="background-color: #dddddd">
+                                <td>required_run_rate</td>
+                                <td>how many runs per over team2 needs to average for remainder of match to tie team1</td> 
+                                <td>positive numbers and<br/> -1 for all overs in which team1 is batting</td>
+                              </tr>
+                                <tr>
+                                <td>runrate_diff</td>
+                                <td>difference between run_rate and required_run_rate</td> 
+                                <td>real numbers (maximum of value equal to -required_run_rate)</td>
+                              </tr>
+                                <tr style="background-color: #dddddd">
+                                <td>is_batting_team</td>
+                                <td>whether team1 is currently batting or not</td> 
+                                <td>1 if team1 is batting, 0 if team2 is batting</td>
+                              </tr>
+                                <tr>
+                                <td>target</td>
+                                <td>whether eventual winner is currently winning</td> 
+                                <td>1 if winner is winning during given over, 0 otherwise</td>
+                              </tr>
+                                <tr style="background-color: #dddddd; font-weight: bold;">
+                                <td>CLASSIFICATION:<br/>winner </td>
+                                <td>team variable of team that won a given match</td> 
+                                <td>team1, team2</td>
                               </tr>
                             </table>
-	over	team1	team2	batting_team	total_runs	player_dismissed	innings_wickets	innings_score	score_target	remaining_target	run_rate	required_run_rate	runrate_diff	is_batting_team	target	winner
-} and our classification attribute: 'winner'</p>
 						</div>
 					</div>
 				</div>
@@ -352,52 +415,31 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
 	<div id="fh5co-testimonials" data-section="testimonials">		
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 section-heading text-center">
-					<h2 class="to-animate">Happy Clients Says...</h2>
+					<h2 class="to-animate">Experiment</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 subtext to-animate">
-							<h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h3>
+							<p style="color: white">To build our models, we split up our dataset into 13 separate csv files, one for each team in the Indian Premier League. To train our models,
+                            we used one instance from each match (inning 2, over 14) to train our model. We then used the remaining instances to test the accuracy of our model.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4">
-					<div class="box-testimony to-animate">
-						<blockquote>
-							<span class="quote"><span><i class="icon-quote-left"></i></span></span>
-							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-						</blockquote>
-						<p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
-					</div>
-					
-				</div>
-				<div class="col-md-4">
-					<div class="box-testimony to-animate">
-						<blockquote>
-							<span class="quote"><span><i class="icon-quote-left"></i></span></span>
-							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
-						</blockquote>
-						<p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
-					</div>
-					
-					
-				</div>
-				<div class="col-md-4">
-					<div class="box-testimony to-animate">
-						<blockquote>
-							<span class="quote"><span><i class="icon-quote-left"></i></span></span>
-							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-						</blockquote>
-						<p class="author">John Doe, Founder <a href="#">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
-					</div>
-					
-				</div>
+                <table style="width:100%; background-color: white; border: 1px solid #dddddd; border-collapse: collapse;">
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="60%">
+                              <tr >
+                                <th>Attribute</th>
+                                <th>Description</th> 
+                                <th>Possible Input Values</th>
+                              </tr>
+                </table>
 			</div>
 		</div>
 	</div>
@@ -406,174 +448,21 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 section-heading text-center">
-					<h2 class="single-animate animate-pricing-1">Pricing</h2>
+					<h2 class="single-animate animate-pricing-1">Results</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
-							<h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h3>
+							<h3>Here are our results.</h3>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 col-sm-6">
-					<div class="price-box to-animate">
-						<h2 class="pricing-plan">Starter</h2>
-						<div class="price"><sup class="currency">$</sup>7<small>/mo</small></div>
-						<p>Basic customer support for small business</p>
-						<hr>
-						<ul class="pricing-info">
-							<li>10 projects</li>
-							<li>20 Pages</li>
-							<li>20 Emails</li>
-							<li>100 Images</li>
-						</ul>
-						<a href="#" class="btn btn-default btn-sm">Get started</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="price-box to-animate">
-						<h2 class="pricing-plan">Regular</h2>
-						<div class="price"><sup class="currency">$</sup>19<small>/mo</small></div>
-						<p>Basic customer support for small business</p>
-						<hr>
-						<ul class="pricing-info">
-							<li>15 projects</li>
-							<li>40 Pages</li>
-							<li>40 Emails</li>
-							<li>200 Images</li>
-						</ul>
-						<a href="#" class="btn btn-default btn-sm">Get started</a>
-					</div>
-				</div>
-				<div class="clearfix visible-sm-block"></div>
-				<div class="col-md-3 col-sm-6 to-animate">
-					<div class="price-box popular">
-						<div class="popular-text">Best value</div>
-						<h2 class="pricing-plan">Plus</h2>
-						<div class="price"><sup class="currency">$</sup>79<small>/mo</small></div>
-						<p>Basic customer support for small business</p>
-						<hr>
-						<ul class="pricing-info">
-							<li>Unlimitted projects</li>
-							<li>100 Pages</li>
-							<li>100 Emails</li>
-							<li>700 Images</li>
-						</ul>
-						<a href="#" class="btn btn-primary btn-sm">Get started</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="price-box to-animate">
-						<h2 class="pricing-plan">Enterprise</h2>
-						<div class="price"><sup class="currency">$</sup>125<small>/mo</small></div>
-						<p>Basic customer support for small business</p>
-						<hr>
-						<ul class="pricing-info">
-							<li>Unlimitted projects</li>
-							<li>Unlimitted Pages</li>
-							<li>Unlimitted Emails</li>
-							<li>Unlimitted Images</li>
-						</ul>
-						<a href="#" class="btn btn-default btn-sm">Get started</a>
-					</div>
-				</div>
-				
-			</div>
+            </div>
 		</div>
 	</div>
-
-	<div id="fh5co-press" data-section="press">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 section-heading text-center">
-					<h2 class="single-animate animate-press-1">Press Releases</h2>
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-press-2">
-							<h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<!-- Press Item -->
-					<div class="fh5co-press-item to-animate">
-						<div class="fh5co-press-img" style="background-image: url(images/img_7.jpg)">
-						</div>
-						<div class="fh5co-press-text">
-							<h3 class="h2 fh5co-press-title">Simplicity <span class="fh5co-border"></span></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit dolorem cumque vitae qui molestias illo accusantium...</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn more</a></p>
-						</div>
-					</div>
-					<!-- Press Item -->
-				</div>
-
-				<div class="col-md-6">
-					<!-- Press Item -->
-					<div class="fh5co-press-item to-animate">
-						<div class="fh5co-press-img" style="background-image: url(images/img_8.jpg)">
-						</div>
-						<div class="fh5co-press-text">
-							<h3 class="h2 fh5co-press-title">Versatile <span class="fh5co-border"></span></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit dolorem cumque vitae qui molestias illo accusantium...</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn more</a></p>
-						</div>
-					</div>
-					<!-- Press Item -->
-				</div>
-				
-				<div class="col-md-6">
-					<!-- Press Item -->
-					<div class="fh5co-press-item to-animate">
-						<div class="fh5co-press-img" style="background-image: url(images/img_9.jpg);">
-						</div>
-						<div class="fh5co-press-text">
-							<h3 class="h2 fh5co-press-title">Aesthetic <span class="fh5co-border"></span></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit dolorem cumque vitae qui molestias illo accusantium...</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn more</a></p>
-						</div>
-					</div>
-					<!-- Press Item -->
-				</div>
-
-				<div class="col-md-6">
-					<!-- Press Item -->
-					<div class="fh5co-press-item to-animate">
-						<div class="fh5co-press-img" style="background-image: url(images/img_10.jpg);">
-						</div>
-						<div class="fh5co-press-text">
-							<h3 class="h2 fh5co-press-title">Creative <span class="fh5co-border"></span></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit dolorem cumque vitae qui molestias illo accusantium...</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn more</a></p>
-						</div>
-					</div>
-					<!-- Press Item -->
-				</div>
-
-			</div>
-		</div>
-	</div>
-	
-
 	<footer id="footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-bottom-padded-sm">
 				<div class="col-md-12">
-					<p class="copyright text-center">&copy; 2015 Free <a href="index.html">Crew</a>. All Rights Reserved. <br> Free HTML5 Template by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> | Images by <a href="http://pexels.com/" target="_blank">Pexels</a> &amp;  <a href="http://unsplash.com/" target="_blank">Unsplash</a></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<ul class="social social-circle">
-						<li><a href="#"><i class="icon-twitter"></i></a></li>
-						<li><a href="#"><i class="icon-facebook"></i></a></li>
-						<li><a href="#"><i class="icon-youtube"></i></a></li>
-						<li><a href="#"><i class="icon-pinterest"></i></a></li>
-						<li><a href="#"><i class="icon-linkedin"></i></a></li>
-						<li><a href="#"><i class="icon-instagram"></i></a></li>
-						<li><a href="#"><i class="icon-dribbble"></i></a></li>
-					</ul>
+					<p style="text-align: center;">Project created to fulfill final project requirement for <a href="http://www.northwestern.edu">Northwestern University</a>'s EECS 349 Machine Learning class taught by Professor Doug Downey<br/>Contact the creators: <a href="mailto:michaelneuman2020@u.northwestern.edu">Michael Neuman</a> and <a href="mailto:aagamshah2017@u.northwestern.edu">Aagam Shah</p>
 				</div>
 			</div>
 		</div>
