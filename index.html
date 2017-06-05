@@ -261,7 +261,7 @@
                         </div>
                     <div class="row" style="text-align:left">
 						<div class="col-md-8 col-md-offset-2 to-animate">
-                            <p><br/>Cricket is a game played between two eleven player teams using a bat and a ball. Players score runs by running between two sets of wooden posts called <a href="https://en.wikipedia.org/wiki/Wicket">wickets</a>. Cricket originated in England in the 16th century. Today it is popular in countries throughout the world including England,
+                            <p><br/>Cricket is a game played between two teams made up of eleven players each. The game is played with a bat and ball. Players score runs by running between two sets of wooden posts called <a href="https://en.wikipedia.org/wiki/Wicket">wickets</a>. Cricket originated in England in the 16th century. Today it is popular in countries throughout the world including England,
                             Australia, India, South Africa and many others.</p>
                             <p>When batting, a team has two players on the field (called batsmen). The goal of Cricket is to score more runs that the other team. There are three main ways to earn runs: 1) the two batsmen can run between the wickets after a ball has been bowled, 2) hitting the ball past the boundary (4 runs if it passes the boundary on the ground, 6 runs if it passes the boundary in the air) and 3) penalty points from the bowling team bowling an illegal ball.</p>
                             <p>When bowling, the bowler is trying to hit one of the wickets and make the batter miss their swing. The bowling team remains on the field for either 20 overs or until 10 batsmen are out. An over is defined as six balls bowled by the bowler. There are many different ways that a batsman can get out. Some of the most common ones are: 1) The batsman misses the ball and the ball hits the wicket, 2) the ball hits the batman's body when it would have hit the wicket normally (called leg before wicket), 3) a fielder catches the ball after a batsman hits it and before the ball leaves the field and 4) if a batsman is running between wickets and a fielder hits the wicket before the runner reaches the other side.</p>
@@ -318,19 +318,19 @@
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 single-animate animate-features-2" style="text-align: left">
 							<p>Our data set contains match results from the past 9 Indian Premier League Seasons. There is an instance for every single over of a given cricket match. In total, our data set contained 577 matches and 22083 instances. Within each instance, there are 17 attributes with the following possible values:</p>
-                            <table style="width:100%; border: 1px solid #dddddd; border-collapse: collapse;">
+                            <table style="width:100%; border: 2px solid #000000; border-collapse: collapse;text-align: center">
                                 <col width="20%">
                                 <col width="20%">
                                 <col width="60%">
-                              <tr >
-                                <th>Attribute</th>
-                                <th>Description</th> 
-                                <th>Possible Input Values</th>
+                              <tr>
+                                <th style="text-align: center">Attribute</th>
+                                <th style="text-align: center">Description</th> 
+                                <th style="text-align: center">Possible Input Values</th>
                               </tr>
                               <tr>
                                 <td>match_id</td>
                                 <td>unique match identifier</td> 
-                                <td>whole numbers 1-577</td>
+                                <td>whole numbers (1-577)</td>
                               </tr>
                               <tr style="background-color: #dddddd">
                                 <td>inning</td>
@@ -340,7 +340,7 @@
                                 <tr>
                                 <td>over</td>
                                 <td>current over of <br/>given inning</td> 
-                                <td>whole numbers 1-20</td>
+                                <td>whole numbers (1-20)</td>
                               </tr>
                                 <tr style="background-color: #dddddd">
                                 <td>team1, team2, batting_team</td>
@@ -431,7 +431,7 @@
 							<p style="color: white">To build our models, we split up our dataset into 13 separate csv files,<br/> one for each team in the Indian Premier League.</p>
 						</div>
 					</div>
-                    <table align="center" style="width:50%; background-color: white; text-align: center; border: 1px solid #dddddd; border-collapse: collapse;">
+                    <table align="center" style="width:50%; background-color: white; text-align: center; border: 2px solid #000000; border-collapse: collapse;">
                         <col width="50%">
                         <col width="50%">
                           <tr style="background-color: #dddddd">
@@ -498,7 +498,7 @@
 					<h2 class="single-animate animate-pricing-1">Results</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
-							<h3 style="text-align:left;">We first trained a Logistic Regression model. We removed instances where it was the 2nd inning and after the 14th over to be used as a testing set. Our accuracy results are displayed in a table below along with the highest positive and negative absolute value coefficients for team2. This translates to the teams that team1 performs best (positive) and worst (negative) against.<br/></h3>
+							<p style="text-align:left;">We first trained a Logistic Regression model. We removed instances where it was the 2nd inning and after the 14th over to be used as a testing set. Thus our model offers a prediction of a match based on information obtained from the first inning and the first 14 overs of the second, meaning our accuracy results will be higher than a random match prediction made based only on a given pair of teams. Our accuracy results are displayed in a table below along with the highest positive and negative absolute value coefficients for team2. This translates to the teams that team1 performs best (positive) and worst (negative) against.<br/></p>
 						</div>
                     <table align="center" style="width:80%; background-color: white; text-align: center; border: 2px outset #6172F4;">
                         <col width="25%">
@@ -577,8 +577,140 @@
                             <td>Pune Warriors (15.6221)</td>
                             <td>Royal Challengers Bangalore (-1.9229)</td>
                         </tr>
-                        <caption>Results of running Weka's Logistic Regression Model on each individual team's dataset</caption>
+                        <caption style="font-style: italic">Results of running Weka's Logistic Regression Model on each individual team's dataset</caption>
                 </table>
+                    <div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2" style="text-align:left"><br/>Some interesting results: The Chennai Super Kings did not have a strong advantage against a single given team (all team weights were between -1 and 1) while the Kolkata Knight Riders had a strong disadvantage against the Rajasthan Royals (coefficent of -375.5865). We attribute the large variance in data due to the small number of unique matches. For example, the Gurajart Lions and Delhi Daredevils have only played in two matches. Because the Delhi Daredevils won both matches, there was a larger negative coefficient assigned to the team2 variable. As the dataset grows with more Indian Premier League seasons happening, we would expect the coefficients to become closer to 0, with variations depending on records between a given pair of teams. Overall, we can see that the logistic model will perform with an accuracy >83% for any given team, meaning we can confidently predict the winner of a match if we have information from the early overs. </div>
+                    </div>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
+							<p style="text-align:left;"><br/>Next we trained each dataset on Weka's NaiveBayes model. We noticed a higher variance in results.</p>
+						</div>
+                    <table align="center" style="width:45%; background-color: white; text-align: center; border: 2px outset #6172F4;">
+                        <col width="50%">
+                        <col width="50%">
+                          <tr>
+                            <th style="text-align:center;">Team1 Value</th>
+                            <th style="text-align:center;">Accuracy</th>
+                          </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Chennai Super Kings</td>
+                            <td>80.78%</td>
+                        </tr>
+                        <tr>
+                            <td>Deccan Chargers</td>
+                            <td>81.36%</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Delhi Daredevils</td>
+                            <td>82.21%</td>
+                        </tr>
+                        <tr>
+                            <td>Gujarat Lions</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Kolkata Knight Riders</td>
+                            <td>79.86%</td>
+                        </tr>
+                        <tr>
+                            <td>Kings Xi Punjab</td>
+                            <td>61.23%</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Mumbai Indians</td>
+                            <td>86.75%</td>
+                        </tr>
+                        <tr>
+                            <td>Pune Warriors</td>
+                            <td>77.23%</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Royal Challengers Bangalore</td>
+                            <td>64.80%</td>
+                        </tr>
+                        <tr>
+                            <td>Rajasthan Royals</td>
+                            <td>80.93%</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Sunrisers Hyderabad</td>
+                            <td>72.22%</td>
+                        </tr>
+                        <caption style="font-style: italic">Results of running Weka's NaiveBayes Model on each individual team's dataset</caption>
+                </table>
+                        <div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2" style="text-align:left"><br/>The 100% accuracy associated with Gujarat Lions can be attributed to the small size of the match dataset. We noticed that most of the accuracies obtained using NaiveBayes were lower than our other models. Overall, we can see that the Naive Bayes model will perform with an accuracy >61% for any given team, not a very confident finding.</div>
+					</div>
+                    <div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
+							<p style="text-align:left;"><br/>We then tried k-nearest neighbor, running cross-validation to find the optimal k value to achieve highest accuracy.</p>
+						</div>
+                    <table align="center" style="width:40%; background-color: white; text-align: center; border: 2px outset #6172F4;">
+                        <col width="50%">
+                        <col width="20%">
+                        <col width="30%">
+                          <tr>
+                            <th style="text-align:center;">Team1 Value</th>
+                            <th style="text-align:center;">Optimal k value</th>
+                            <th style="text-align:center;">Accuracy</th>
+                          </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Chennai Super Kings</td>
+                            <td>1</td>
+                            <td>84.42%</td>
+                        </tr>
+                        <tr>
+                            <td>Deccan Chargers</td>
+                            <td>1</td>
+                            <td>87.73%</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Delhi Daredevils</td>
+                            <td>1</td>
+                            <td>83.00%</td>
+                        </tr>
+                        <tr>
+                            <td>Gujarat Lions</td>
+                            <td>1</td>
+                            <td>96.30%</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Kolkata Knight Riders</td>
+                            <td>1</td>
+                            <td>85.07%</td>
+                        </tr>
+                        <tr>
+                            <td>Kings Xi Punjab</td>
+                            <td>1</td>
+                            <td>86.77%</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Mumbai Indians</td>
+                            <td>1</td>
+                            <td>90.39%</td>
+                        </tr>
+                        <tr>
+                            <td>Pune Warriors</td>
+                            <td>1</td>
+                            <td>89.11%</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Royal Challengers Bangalore</td>
+                            <td>1</td>
+                            <td>85.53%</td>
+                        </tr>
+                        <tr>
+                            <td>Rajasthan Royals</td>
+                            <td>5</td>
+                            <td>87.16%</td>
+                        </tr>
+                        <tr style="background-color: #6172F4; color: white;">
+                            <td>Sunrisers Hyderabad</td>
+                            <td>1</td>
+                            <td>81.67%</td>
+                        </tr>
+                        <caption style="font-style: italic">Results of running Weka's lBk (k-Nearest Neighbor) Model <br/>on each individual team's dataset</caption>
+                </table>
+                        <div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2" style="text-align:left"><br/>It was interesting that the Rajasthan Royals achieved maximum accuracy with 5-nearest neighbors while all other teams had maximum accuracy using just 1-nearest neighbor. Again, a higher accuracy for the Gujarat Lions can be attributed to the size of the dataset. Overall, we can see that the nearest neighbor model will perform with an accuracy >81% for any given team, slighly lower than the logistic model.</div>
 					</div>
 				</div>
             </div>
