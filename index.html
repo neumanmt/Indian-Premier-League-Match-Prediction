@@ -458,21 +458,20 @@
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
 							<p style="text-align:left;">We first trained a Logistic Regression model. We removed instances where it was the 2nd inning and after the 14th over to be used as a testing set. Thus our model offers a prediction of a match based on information obtained from the first inning and the first 14 overs of the second, meaning our accuracy results will be higher than a random match prediction made based only on a given pair of teams. Our accuracy results are displayed in a table below along with the highest positive and negative absolute value coefficients for team2. This translates to the teams that team1 performs best (positive) and worst (negative) against.<br/></p>
 						</div>
-                    <table align="center" style="width:100%; background-color: white; text-align: center; border: 2px outset #6172F4;">
-                        <col width="15%">
-                        <col width="12.5%">
-                        <col width="12.5%">
-                        <col width="15%">
-                        <col width="15%">
-                        <col width="15%">
-                        <col width="15%">
+                    <table align="center" style="width:90%; background-color: white; text-align: center; border: 2px outset #6172F4;">
+                        <col width="22%">
+                        <col width="27%">
+                        <col width="27%">
+                        <col width="8%">
+                        <col width="8%">
+                        <col width="8%">
                           <tr>
                             <th style="text-align:center;">Team</th>
                             <th style="text-align:center;">Maximum attribute (LR)</th>
                             <th style="text-align:center;">Minimum attribute (LR)</th>
-                            <th style="text-align:center;">Logistic Regression Accuracy</th>
-                            <th style="text-align:center;">Naive Bayes Accuracy</th>
-                            <th style="text-align:center;">k-Nearest Neighbor Accuracy</th>
+                            <th style="text-align:center;">Logistic Regression</th>
+                            <th style="text-align:center;">Naive <br/>Bayes</th>
+                            <th style="text-align:center;">k-Nearest <br/>Neighbor</th>
                           </tr>
                         <tr style="background-color: #6172F4; color: white;">
                             <td>Chennai Super Kings</td>
@@ -562,6 +561,7 @@
                             <td>72.22%</td>
                             <td>81.67%</td>
                         </tr>
+                        <caption style="font-style:italic">Accuracy of Weka's Logistic, NaiveBayes and lBk trained models on test set</caption>
                 </table>
                          <br/><br/>
                         <!--
