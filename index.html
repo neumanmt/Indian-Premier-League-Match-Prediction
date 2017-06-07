@@ -563,7 +563,7 @@
                         </tr>
                         <caption style="font-style:italic">Accuracy of Weka's Logistic, NaiveBayes and lBk trained models on test set</caption>
                 </table>
-                         <br/><br/>
+                         <br/>
                         <!--
 					<div class="row to-animate">
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
@@ -708,11 +708,12 @@
                             <h3 style="font-weight: bold;">Naive Bayes Model Findings</h3>
                             <li>The 100% accuracy obtained on the Gujarat Lions can be attributed to the small size of the match dataset (231 instances) compared to all other datasets (on average, ~2132 instances)</li>
                             <li>With the exception of the Gujarat Lions dataset, all other NaiveBayes models were outperformed by the Logistic Regression model</li>
+                            <li>A NaiveBayes model doesn't completely make sense for our given context as certain parameters are not independent of each other (run_rate_diff).</li>
                             <br/>
                             <h3 style="font-weight: bold;">k-Nearest Neighbor Model Findings</h3>
-                            <li>The Rajasthan Royals were the only team to achieve maximum accuracy with k &ne; 1</li>
+                            <li>The Rajasthan Royals were the only team to achieve maximum accuracy with k &ne; 1 (accuracy was obtained at k = 5)</li>
                             <li>The Gujarat Lions model's higher accuracy can again be attributed to small dataset size</li>
-                            <li>Results were comparable to the Logistic Regression model with 45.45% of team dataset's outperforming</li>
+                            <li>Results were comparable to the Logistic Regression model with 5 out of 11 teams' datasets outperforming</li>
                         </ul>
                         <br/>
                 <a href="https://neumanmt.github.io/IPLFinalReport.pdf" target="_blank" class="btn btn-primary btn-block" style="background-color: #6172F4; text-color:white">Download the final report</a></div>
