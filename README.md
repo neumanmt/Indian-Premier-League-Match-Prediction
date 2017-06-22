@@ -1,1 +1,1 @@
-# neumanmt.github.io
+# EECS 349 Project: Indian Premier League Match Prediction
